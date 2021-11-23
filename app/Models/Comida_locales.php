@@ -7,15 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Permission\Traits\HasRoles;
 
-class Tipo_comida extends Model
+class Comida_locales extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasRoles;
-    protected $table = 'tipo_comidas';
+    protected $table = 'comidas_locales';
     protected $fillable = [
         'id',
-        'nombre',
-        'descripcion',
+        'local_id',
+        'comida_id',
+        'precio',
     ];
 }

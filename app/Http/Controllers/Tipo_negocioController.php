@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tipo_negocio;
+use App\Models\User;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class Tipo_negocioController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class Tipo_negocioController extends Controller
      */
     public function index()
     {
-        //
+        $tipo_negocio =  Tipo_negocio::whereNull ('deleted_at')->get ();
+        return view('Tipo_negocio.index')->with('tipo_negocio',$tipo_negocio);
     }
 
     /**
@@ -23,7 +31,7 @@ class Tipo_negocioController extends Controller
      */
     public function create()
     {
-        //
+        return view('tipo_negocio.create');
     }
 
     /**
@@ -34,7 +42,16 @@ class Tipo_negocioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipo_negocio = Tipo_negocio::create(
+            ['id' => $request->id,
+            'descripcion' => $request->descripcion,
+            
+            ]);
+
+            $tipo_negocio->save();
+
+            return redirect('/tipo_negocio');
+        
     }
 
     /**
@@ -56,7 +73,8 @@ class Tipo_negocioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tipo_negocio =  Tipo_negocio::find($id);
+        return view('Tipo_negocio.edit')->with('tipo_negocio', $tipo_negocio);
     }
 
     /**
@@ -68,7 +86,13 @@ class Tipo_negocioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tipo_negocio = Tipo_negocio::find($id);
+        $tipo_negocio->id = $request->get('id');
+        $tipo_negocio->descripcion = $request->get('descripcion');
+        
+        $tipo_negocio->save();
+        
+        return redirect()->route('tipo_negocio.index');
     }
 
     /**
@@ -79,6 +103,9 @@ class Tipo_negocioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tipo_negocio = Tipo_negocio::find($id);
+        $tipo_negocio->delete();
+      
+        return redirect()->route('tipo_negocio.index');
     }
 }

@@ -15,7 +15,12 @@ class CreateLocalesTable extends Migration
     {
         Schema::create('locales', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre_local');
+            $table->string('telefono');
+            $table->string('email');
+            $table->string('tipo_negocio_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

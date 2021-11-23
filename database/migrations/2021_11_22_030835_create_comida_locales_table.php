@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoComidasTable extends Migration
+class CreateComidaLocalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTipoComidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_comidas', function (Blueprint $table) {
+        Schema::create('comida_locales', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('local_id');
+            $table->string('comida_id');
+            $table->integer('precio');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ class CreateTipoComidasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_comidas');
+        Schema::dropIfExists('comida_locales');
     }
 }

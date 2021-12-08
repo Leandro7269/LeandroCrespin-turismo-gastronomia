@@ -14,43 +14,33 @@
 
   <div class="form-row">
     
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-1">
     <label for="" class="form-label">Id</label>
-    <input class="form-control" id="id" name="id" type="text" placeholder="Id" value="{{ old('id')}}" required />
+    <input class="form-control" id="id" name="id" type="text" placeholder="" value="{{ old('id')}}" required />
   </div>
   
   <div class="form-row">
 
-  <div class="form-group col-md-3">
-    <label for="inputState" >Descripcion</label>
-      <select id="sucursales" name="sucursales" value="{{ old('sucursales')}}" class="form-control" tabindex= " 4">
-        <option selected value="1">1</option>
-        <option selected value="2">2</option>
-        <option selected value="3">3</option>
-        <option selected value="4">4</option>
-        <option selected value="5">5</option>
-        <option selected value="6">6</option>
-        <option selected value="7">7</option>
-        <option selected value="8">8</option>
-        <option selected value="9">9</option>
-        <option selected value="10">10</option>
-
   <div class="form-group col-md-6">
-      <label for="inputPassword4">Local</label>
+    <label for="descripcion" >Descripcion</label>
+    <input class="form-control" id="descripcion" name="descripcion" type="text" placeholder="" value="{{ old('descripcion')}}" required />
+
+  <div class="form-group col-md-8">
+      <label for="local_id">Local</label>
       <input id="local_id" class="form-control" type="text" placeholder="" name="local_id" value="{{ old('local_id')}}"/>
     </div>
   </div>
 
   
     <div class="form-group col-md-5">
-      <label for="inputAddress">Direccion</label>
-      <input id="direccion_local" class="form-control" type="text" name="direccion_local" value="{{ old('direccion_local')}}" placeholder=""/>
+      <label for="direccion">Direccion</label>
+      <input id="direccion" class="form-control" type="text" name="direccion" value="{{ old('direccion')}}" placeholder=""/>
     </div>
-  
-  <div class="form-group col-md-5">
-      <div class="form-group">
-      <label for="inputAddress2">Referencia</label>
-      <input id="ref" class="form-control" type="text" name="ref" value="{{ old('ref')}}" placeholder=""/>
+
+  <div class="form-group">
+  <div class="form-group col-md-7">
+      <label for="referencia">Referencia</label>
+      <input id="referencia" class="form-control" type="text" name="referencia" value="{{ old('referencia')}}" placeholder=""/>
   </div>
 
 

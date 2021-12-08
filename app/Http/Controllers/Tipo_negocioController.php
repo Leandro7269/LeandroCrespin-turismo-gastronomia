@@ -44,7 +44,7 @@ class Tipo_negocioController extends Controller
     {
         $tipo_negocio = Tipo_negocio::create(
             ['id' => $request->id,
-            'descripcion' => $request->descripcion,
+            'tipo_negocio' => $request->tipo_negocio,
             
             ]);
 
@@ -88,7 +88,7 @@ class Tipo_negocioController extends Controller
     {
         $tipo_negocio = Tipo_negocio::find($id);
         $tipo_negocio->id = $request->get('id');
-        $tipo_negocio->descripcion = $request->get('descripcion');
+        $tipo_negocio->tipo_negocio = $request->get('tipo_negocio');
         
         $tipo_negocio->save();
         

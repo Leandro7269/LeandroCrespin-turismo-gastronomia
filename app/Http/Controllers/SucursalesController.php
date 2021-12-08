@@ -47,7 +47,7 @@ class SucursalesController extends Controller
     ['id' => $request->id,
     'descripcion' => $request->descripcion,
     'local_id' => $request->local_id,
-    'ref' => $request->ref,
+    'referencia' => $request->referencia,
     'direccion' => $request->direccion,
         
     ]);
@@ -92,7 +92,7 @@ class SucursalesController extends Controller
         $sucursales->descripcion = $request->get('descripcion');
         $sucursales->local_id = $request->get('local_id');
         $sucursales->direccion = $request->get('direccion');
-        $sucursales->ref = $request->get('ref');
+        $sucursales->referencia = $request->get('referencia');
 
         $sucursales->save();
 

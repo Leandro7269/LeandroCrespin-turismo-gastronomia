@@ -12,10 +12,10 @@
 <!-- Tabla -->
 <div class="table-responsive">
 <table id="tipo_negocios" class="table table-striped table-bordered table-condensed" style= width:100%>
-<thead class="bg-primary text-white text-center">
+<thead class="bg-info text-white text-center">
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Descripcion</th>
+        <th scope="col">Tipo de Negocio</th>
         
     </tr>
 
@@ -26,12 +26,12 @@
  <!-- Recorro los elementos del array -->   
     @foreach($tipo_negocio as $t_negocio)
     <tr>
-        <td>{{$tipo_negocio->id}}</td>
-        <td>{{$tipo_negocio->descripcion}}</td>
+        <td>{{$t_negocio->id}}</td>
+        <td>{{$t_negocio->tipo_negocio}}</td>
         
-        <td><a href="{{ route('Tipo_negocio.edit',$tipo_negocio) }}" class="btn btn-info">Editar</a>
+        <td><a href="{{ route('Tipo_negocio.edit',$t_negocio) }}" class="btn btn-info">Editar</a>
 
-        <form action="{{route ('Tipo_negocio.destroy', $tipo_negocio->id)}}" method="POST">
+        <form action="{{route ('Tipo_negocio.destroy', $t_negocio->id)}}" method="POST">
 
         @csrf
         @method('DELETE')  

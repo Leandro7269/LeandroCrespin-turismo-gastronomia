@@ -12,7 +12,7 @@
 <!-- Tabla -->
 <div class="table-responsive">
 <table id="tipo_comidas" class="table table-striped table-bordered table-condensed" style= width:100%>
-<thead class="bg-primary text-white text-center">
+<thead class="bg-info text-white text-center">
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
@@ -29,7 +29,7 @@
     <tr>
         <td>{{$t_comida->id}}</td>
         <td>{{$t_comida->nombre}}</td>
-        <td>{{$t_comida->Descripcion}}</td>
+        <td>{{$t_comida->descripcion}}</td>
         
         <td><a href="{{ route('Tipo_comida.edit',$t_comida) }}" class="btn btn-info">Editar</a>
 

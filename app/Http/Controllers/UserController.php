@@ -41,24 +41,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $users = User::create(
-    ['id' => $request->id,
-    'nombre' => $request->nombre,
-    'apellido' => $request->apellido,
-    'telefono' => $request->telefono,
-    'email' => $request->email,
-    'password' => $request->password,
-    'direccion_local' => $request->direccion_local,
-    'local_id' => $request->local_id,
-    ]);
-        
         $user = new User();
-        $user->name = $request->nombre_local;
+        $user->id = $request->id;
+        $user->apellido = $request->apellido;
+        $user->telefono = $request->telefono;
+        $user->direccion = $request->direccion;
+        $user->local_id = $request->local_id;
+        $user->nombre = $request->nombre;;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
-        //aca habra que asignar el rol por defecto
-        // pero vamos a probar si crea y podes iniciar
+        //Asigno un rol por defecto
+        
         $user->assignRole('Creador');
         
         return redirect('/user');
@@ -94,15 +88,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
+        //dd($id);
         $users = User::find($id);
+        $users->id = $request->get('id');
         $users->nombre = $request->get('nombre');
         $users->apellido = $request->get('apellido');
         $users->telefono = $request->get('telefono');
         $users->email = $request->get('email');
         $users->password = $request->get('password');
-        $users->direccion_local = $request->get('direccion_local');
+        $users->direccion = $request->get('direccion');
         $users->local_id = $request->get('local_id');
 
         $users->save();

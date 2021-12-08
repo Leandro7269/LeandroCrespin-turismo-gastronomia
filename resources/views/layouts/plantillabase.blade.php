@@ -16,7 +16,13 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="nav-link active" aria-current="page" href="/user">Usuarios</a>
+    
+  <a class="nav-link active" aria-current="page" href="/publicaciones">Publicaciones</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  <a class="nav-link active" aria-current="page" href="/user">Usuarios</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -72,15 +78,6 @@
     @yield('js')
     @yield('content')
   </body>
-
-  <!-- Github-->
-  <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com/Leandro7269/LeandroCrespin-turismo-gastronomia" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
      
   </html>
-    <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-danger" href="https://mail.google.com/mail/u/1/#inbox/">Leandro Crespin</a>
-  </div
+  

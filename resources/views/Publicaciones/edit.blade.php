@@ -2,12 +2,12 @@
 @section('title', 'Modulo Gastronomia')
 
 @section('content_header')
-    <h1>Edita tú tipo de comida</h1>
+    <h1>Edita tú publicacion</h1>
 @stop
 @section('content')
 
 
-<form action="{{route('Tipo_comida.update',$tipo_comida->id)}}" method="POST" > 
+<form action="{{route('$Publicaciones.update',$Publicaciones->id)}}" method="POST" > 
 @csrf
 @method('PUT')
 <div class="modal-body">
@@ -22,8 +22,8 @@
   <div class="form-row">
 
   <div class="form-group col-md-4">
-    <label for="nombre" class="form-label">Nombre</label>
-    <input class="form-control" id="nombre" name="nombre" type="text" placeholder="" value="{{ old('nombre') ? old('nombre')  : $tipo_comida->nombre}}" required class="form-control"  tabindex= "2">
+    <label for="imagen" class="form-label">Imagen</label>
+    <input class="form-control" id="imagen" name="imagen" type="text" placeholder="" value="{{ old('imagen') ? old('imagen')  : $Publicaciones->imagen}}" required class="form-control"  tabindex= "2">
   </div>
 
   <div class="form-row">  

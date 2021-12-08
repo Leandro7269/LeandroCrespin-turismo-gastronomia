@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Permission\Traits\HasRoles;
 
-class Tipo_negocio extends Model
+class Publicaciones extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    use HasRoles;
-    protected $table = 'tipo_negocios';
+    protected $table = 'publicaciones';
     protected $fillable = [
-        'id', 
-        'tipo_negocio',
+        'id',
+        'imagen',
+        'descripcion',
     ];
 }

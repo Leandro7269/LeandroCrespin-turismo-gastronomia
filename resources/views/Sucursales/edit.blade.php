@@ -34,14 +34,14 @@
 
   
     <div class="form-group col-md-5">
-      <label for="inputAddress">Direccion</label>
-      <input id="direccion_local" class="form-control" type="text" name="direccion_local" value="{{ old('direccion_local')}}" placeholder=""/>
+      <label for="direccion">Direccion</label>
+      <input id="direccion" class="form-control" type="text" name="direccion" value="{{ old('direccion')}}" placeholder=""/>
     </div>
   
   <div class="form-group col-md-5">
       <div class="form-group">
-      <label for="inputAddress2">Referencia</label>
-      <input id="ref" class="form-control" type="text" name="ref" value="{{ old('ref')}}" placeholder=""/>
+      <label for="referencia">Referencia</label>
+      <input id="referencia" class="form-control" type="text" name="referencia" value="{{ old('referencia')}}" placeholder=""/>
   </div>
 
 

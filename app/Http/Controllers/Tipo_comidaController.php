@@ -84,13 +84,15 @@ class Tipo_comidaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //dd($request);
         $tipo_comida = Tipo_comida::find($id);
+        $tipo_comida->id = $request->get('id');
         $tipo_comida->nombre = $request->get('nombre');
         $tipo_comida->descripcion = $request->get('descripcion');
 
         $tipo_comida->save();
 
-        return redirect()->route('tipo_comida.index');
+        return redirect()->route('Tipo_comida.index');
     }
 
     /**

@@ -14,14 +14,15 @@
 
   <div class="form-row">
     
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
     <div class="table-responsive">
-    <label for="" class="form-label">ID</label>
+    <label for="id" class="form-label">ID</label>
     <input class="form-control" id="id" name="id" type="text" placeholder="" value="{{ old('id')}}" required />
   </div>
   
-  <div class="form-group col-md-6">
-    <label for="inputState">Tipo de negocio</label>
+  <div class="form-row">
+  <div class="form-group col-md-7">
+    <label for="tipo_negocio">Tipo de negocio</label>
     <select id="tipo_negocio" name="tipo_negocio" value="{{ old('tipo_negocio')}}" required class="form-control" tabindex= " 2">
         <option selected value="Ninguno">Ninguno</option>
         <option selected value="Restaurantes">Restaurantes</option>
@@ -34,7 +35,7 @@
         <option selected value="Restaurantes">Restaurantes</option>
     </select>
     </div>
-
+  </div>
 
   
   <a href="/tipo_negocio" class="btn btn-primary" placeholder="" tabindex="11">Cancelar</a>

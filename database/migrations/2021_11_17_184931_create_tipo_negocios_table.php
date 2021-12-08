@@ -15,7 +15,7 @@ class CreateTipoNegociosTable extends Migration
     {
         Schema::create('tipo_negocios', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
+            $table->string('tipo_negocio');
             $table->timestamps();
             $table->softDeletes();
         });

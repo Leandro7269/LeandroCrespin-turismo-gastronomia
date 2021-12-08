@@ -14,19 +14,19 @@
 
   <div class="form-row">
     
-    <div class="form-group col-md-6">
-    <label for="" class="form-label">Id</label>
+    <div class="form-group col-md-1">
+    <label for="id" class="form-label">ID</label>
     <input class="form-control" id="id" name="id" type="text" placeholder="" value="{{ old('id') ? old('id')  : $tipo_negocio->id }}" required class="form-control"  tabindex= "1">
   </div>
   
   <div class="form-row">
-    <div class="form-group col-md-6">
-    <label for="" class="form-label">Descripcion</label>
-    <input class="form-control" id="descripcion" name="descripcion" type="text" placeholder="" value="{{ old('descripcion') ? old('descripcion')  : $tipo_negocio->descripcion}}" required class="form-control"  tabindex= "2">
+    <div class="form-group col-md-11">
+    <label for="tipo_negocio" class="form-label">Tipo de negocio</label>
+    <input class="form-control" id="tipo_negocio" name="tipo_negocio" type="text" placeholder="" value="{{ old('tipo_negocio') ? old('tipo_negocio')  : $tipo_negocio->tipo_negocio}}" required class="form-control"  tabindex= "2">
   </div>
     
   
-  <a href="/tipo_negocio" class="btn btn-primary" placeholder="" tabindex="11">Cancelar</a>
+  <a href="/tipo_negocio" class="btn btn-primary" placeholder="" tabindex="">Cancelar</a>
   <button type="submit"class="btn btn-success" placeholder="" tabindex="12">Guardar</button>
 
 </div>

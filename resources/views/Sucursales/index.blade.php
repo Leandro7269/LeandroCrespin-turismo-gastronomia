@@ -11,13 +11,13 @@
 <!-- Tabla -->
 <div class="table-responsive">
 <table id="sucursales" class="table table-striped table-bordered table-condensed" style= width:100%>
-<thead class="bg-primary text-white text-center">
+<thead class="bg-info text-white text-center">
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Local_id</th>
         <th scope="col">Direccion</th>
-        <th scope="col">Ref</th>
+        <th scope="col">Referencia</th>
     </tr>
 
 </div>
@@ -34,7 +34,7 @@
         <td>{{$sucursales->referencia}}</td>
         <td><a href="{{ route('sucursales.edit',$sucursales) }}" class="btn btn-info">Editar</a>
 
-        <form action="{{route ('sucursales.destroy', $user->id)}}" method="POST">
+        <form action="{{route ('sucursales.destroy', $sucursales->id)}}" method="POST">
 
         @csrf
         @method('DELETE')  

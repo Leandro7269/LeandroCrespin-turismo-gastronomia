@@ -2,39 +2,38 @@
 @section('title', 'Modulo Gastronomia')
 
 @section('content_header')
-    <h1>Crea tú Local</h1>
+    <h1>Publicaciones</h1>
 @stop
 @section('content')
-    
 
-<a href="locales/create" class="btn btn-success mb-3">Nuevo Local</a>
+
+<a href="publicaciones/create" class="btn btn-success mb-3">Nuevo Registro</a>
 
 <!-- Tabla -->
 <div class="table-responsive">
-<table id="locales" class="table table-striped table-bordered table-condensed" style= width:100%>
+<table id="publicaciones" class="table table-striped table-bordered table-condensed" style= width:100%>
 <thead class="bg-info text-white text-center">
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nombre_local</th>
-        <th scope="col">Teléfono</th>
-        <th scope="col">Email</th>
-        <th scope="col">Tipo_negocio_id</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Descripcion</th>     
+        
+    </tr>
 
 </div>
 </thead>
 <tbody>
     
  <!-- Recorro los elementos del array -->   
-    @foreach($locales as $locales)
+    @foreach($Publicaciones as $item)
     <tr>
-        <td>{{$locales->id}}</td>
-        <td>{{$locales->nombre_local}}</td>
-        <td>{{$locales->telefono}}</td>
-        <td>{{$locales->email}}</td>
-        <td>{{$locales->tipo_negocio_id}}</td>
-        <td><a href="{{ route('locales.edit',$locales) }}" class="btn btn-info">Editar</a>
+        <td>{{$item->id}}</td>
+        <td><img src="{{ asset('img/'.$item->imagen) }}"></td>
+        <td>{{$item->descripcion}}</td>
+        
+        <td><a href="{{ route('Publicaciones.edit',$item) }}" class="btn btn-info">Editar</a>
 
-        <form action="{{route ('locales.destroy', $locales->id)}}" method="POST">
+        <form action="{{route ('Publicaciones.destroy', $item->id)}}" method="POST">
 
         @csrf
         @method('DELETE')  
@@ -42,6 +41,7 @@
 
 </form>   
     </tr>    
+    
     
 @endforeach
 
